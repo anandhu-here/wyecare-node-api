@@ -1,0 +1,7 @@
+PUT http://localhost:4000/api/v1/shift/6664e203fc3d1bb9899b918a/accept
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NThmY2MzYjEzN2EzNzc4MTk1Nzc5YSIsImlhdCI6MTcxNzEwNzkwNywiZXhwIjoxNzI0ODgzOTA3fQ.aqKahZkdvAbWCec29BZRlWY0nqB9VBPAK_x_SsL-1fA
+
+###
+
+PUT http://localhost:4000/api/v1/shift/6664e203fc3d1bb9899b918a/reject
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NThmY2MzYjEzN2EzNzc4MTk1Nzc5YSIsImlhdCI6MTcxNzEwNzkwNywiZXhwIjoxNzI0ODgzOTA3fQ.aqKahZkdvAbWCec29BZRlWY0nqB9VBPAK_x_SsL-1fA

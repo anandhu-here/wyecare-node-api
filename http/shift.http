@@ -1,0 +1,71 @@
+@homeToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5NTJhZGFlNzQzOGYyZTNiMGNmYiIsImlhdCI6MTcxOTc2ODM2MiwiZXhwIjoxNzI3NTQ0MzYyfQ.2NK0rpsIHD4Ii2tHSr-nobWqwI4duaZ8lXtpv4U1ot4
+
+GET http://localhost:4000/api/v1/shift
+Authorization: Bearer {{homeToken}}
+###
+
+POST http://localhost:4000/api/v1/shift/assign-carers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmI2ZWQ3MDIzMDhhMWJmZjI1NTZlYyIsImlhdCI6MTcxODMxNjc1OSwiZXhwIjoxNzI2MDkyNzU5fQ.ynP2PBwX3zOMKWeV_A9i5n4P-tueV9QEkqCFzWT_sDQ
+Content-Type: application/json
+
+{
+    "shiftId": "666dc4dafe8029958dbac906",
+    "carerIds": ["666d642ead8d040eea8adf88","666d66b2ad8d040eea8ae013"]
+}
+###
+
+POST http://localhost:4000/api/v1/shift/666e13d01592b6ecf52045e3/unassign-carer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmI2ZWQ3MDIzMDhhMWJmZjI1NTZlYyIsImlhdCI6MTcxODMxNjc1OSwiZXhwIjoxNzI2MDkyNzU5fQ.ynP2PBwX3zOMKWeV_A9i5n4P-tueV9QEkqCFzWT_sDQ
+Content-Type: application/json
+
+{
+    "carerId": "666d642ead8d040eea8adf88"
+}
+
+###
+
+GET http://localhost:4000/api/v1/shift/unaccepted
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjBmMGMxNjM3MTdhYjk2OWMyNDg3NyIsImlhdCI6MTcxNzYyOTEyMSwiZXhwIjoxNzI1NDA1MTIxfQ.h_u1lQbzOd1bRhqPO19xyXNQ-r-84i8n3sEM1SmKYC4
+
+###
+POST http://localhost:4000/api/v1/shift/multiple
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjBmMGMxNjM3MTdhYjk2OWMyNDg3NyIsImlhdCI6MTcxNzYyOTEyMSwiZXhwIjoxNzI1NDA1MTIxfQ.h_u1lQbzOd1bRhqPO19xyXNQ-r-84i8n3sEM1SmKYC4
+Content-Type: application/json
+
+{
+    "shiftsData": [
+        {
+            "shiftType": "6665c0282a986adaaae486d3",
+            "agentId": "6658fcc3b137a3778195779a",
+            "count": 2
+        },
+        {
+            "shiftType": "6665c0282a986adaaae486d4",
+            "agentId": "6658fcc3b137a3778195779a",
+            "count": 2
+        }
+    ]
+}
+
+###
+
+DELETE http://localhost:4000/api/v1/shift/6664dc8159ae9818cd22e7df
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjBmMGMxNjM3MTdhYjk2OWMyNDg3NyIsImlhdCI6MTcxNzYyOTEyMSwiZXhwIjoxNzI1NDA1MTIxfQ.h_u1lQbzOd1bRhqPO19xyXNQ-r-84i8n3sEM1SmKYC4
+
+
+###
+
+PUT http://localhost:4000/api/v1/shift/6664dc5e59ae9818cd22e7d5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjBmMGMxNjM3MTdhYjk2OWMyNDg3NyIsImlhdCI6MTcxNzYyOTEyMSwiZXhwIjoxNzI1NDA1MTIxfQ.h_u1lQbzOd1bRhqPO19xyXNQ-r-84i8n3sEM1SmKYC4
+Content-Type: application/json
+
+{
+    "shiftType": "6664dc4b59ae9818cd22e7cf",
+    "agentId": "6658fcc3b137a3778195779a",
+    "count":10
+}
+
+###
+
+GET http://localhost:4000/api/v1/shift/66638e8845c72520e7c177a0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjBmMGMxNjM3MTdhYjk2OWMyNDg3NyIsImlhdCI6MTcxNzYyOTEyMSwiZXhwIjoxNzI1NDA1MTIxfQ.h_u1lQbzOd1bRhqPO19xyXNQ-r-84i8n3sEM1SmKYC4

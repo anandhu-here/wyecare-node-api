@@ -1,0 +1,23 @@
+@homeToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5NTJhZGFlNzQzOGYyZTNiMGNmYiIsImlhdCI6MTcxOTc2ODM2MiwiZXhwIjoxNzI3NTQ0MzYyfQ.2NK0rpsIHD4Ii2tHSr-nobWqwI4duaZ8lXtpv4U1ot4
+@carerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE3Yzk0ZGFlNzQzOGYyZTNiMGMyYiIsImlhdCI6MTcxOTc2MjA2OCwiZXhwIjoxNzI3NTM4MDY4fQ.64iW6pBZUl9u7Qcj8nd0YzkDUIeZaBAR1GZ0GBjI5j0
+
+### GET timesheets
+
+GET http://localhost:4000/api/v1/timesheet
+Authorization: Bearer {{carerToken}}
+
+
+### Create timesheets
+
+POST http://localhost:4000/api/v1/timesheet
+Authorization:  Bearer {{carerToken}}
+Content-Type: application/json
+
+{
+    "shiftId": "66819554dae7438f2e3b0d8a"
+}
+
+### Approve timesheets
+PATCH http://localhost:4000/api/v1/timesheet/6681a40af491fcf979397564/approve
+Authorization: Bearer {{homeToken}}
+Content-Type: application/json

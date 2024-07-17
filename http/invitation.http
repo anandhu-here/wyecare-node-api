@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:4000/api/v1
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODMzZjdjYjg4YmRjYzFiMDRlYjVlOSIsImlhdCI6MTcxOTg3NzUwMCwiZXhwIjoxNzI3NjUzNTAwfQ.otDAXrvdyzHFhxR2k9FZI4rH6WrKi-X49VB32MhLrYA
+@authTokenHome = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzYwZmJlNTMyZmMyNjYyNWU0OTMwNyIsImlhdCI6MTcxOTAxMzMxMCwiZXhwIjoxNzI2Nzg5MzEwfQ.028jxNHQAgsoqPvBMiOMD68O9Sy-GKJCOIseCD67OuY
+
+### Send Invitation
+POST {{baseUrl}}/invitations/
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "receiverId": "6683c8993b595e97f80889dc"
+}
+
+### Get invitations
+
+GET {{baseUrl}}/invitations/
+Authorization: Bearer {{authToken}}
+
+
+### Cancel Invitation
+
+DELETE {{baseUrl}}/invitations/6677f424e39dfc8d4e826bc6
+Authorization: Bearer {{authToken}}
+
+
+### Accept Invitation
+PUT {{baseUrl}}/invitations/accept/667707567d9064a1db26db1d
+Authorization: Bearer {{authToken}}
+
+### Reject Invitation
+PUT {{baseUrl}}/invitations/reject/60a3e2c9b9b6a50015f1b0a3
+Authorization: Bearer {{authToken}}
+

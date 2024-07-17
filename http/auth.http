@@ -1,0 +1,90 @@
+
+@homeToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODMzOWU2Y2VjMDIyMDlkY2VkYzQ5ZCIsImlhdCI6MTcxOTg3NjA3MCwiZXhwIjoxNzI3NjUyMDcwfQ.JDtE1N7sLC8MSoEA2SEV3vpM0plDY7mHogJE5kORHsY
+@agencyToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODBhNTUzNjJmZmNhOTg5ZjE4ZGU0ZCIsImlhdCI6MTcxOTcwNjk2MywiZXhwIjoxNzI3NDgyOTYzfQ.ZbJC9WLTMk2WS_SKKc-TrbYeCGoTlCyqfUDpMcCAkyE
+
+@carerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODMzZGVhOTRmYjE5MmRiYjg5NDQzNiIsImlhdCI6MTcxOTg3NzA5OCwiZXhwIjoxNzI3NjUzMDk4fQ.1lSq6PaE-pnF73GskTLgxUYfq_UMcTwpDz0bm53yU8M
+
+
+
+### 
+
+POST http://localhost:4000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "anandhu@circadacare.com",
+    "password": "testing@123"
+}
+
+###
+
+POST http://localhost:4000/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "fname": "test",
+    "lname": "Name",
+    "email": "anandhusathe@gmail.com",
+    "password": "testing@123",
+    "confirmPassword": "testing@123",
+    "accountType": "carer",
+    "company":{
+        "name": "My Home",
+        "address": "My Address"
+    }
+
+}
+###
+
+PATCH http://localhost:4000/api/v1/auth/link 
+Content-Type: application/json
+Authorization: Bearer {{carerToken}}
+
+{
+    "linkedUserId": "6683397ccec02209dcedc490",
+    "linkedUserType": "agency"
+}
+
+###
+
+PUT http://localhost:4000/api/v1/auth/update-availability
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzFkYWRlZjlhODUxYWZmNGEzMThiZiIsImlhdCI6MTcxODczNzYzMCwiZXhwIjoxNzI2NTEzNjMwfQ.p6-oxZF_qOuxExEo9xoyPjFM31YaWSEJo_yNLJj9AmI
+
+{
+    "dates":[
+        "2022-02-10"
+    ]
+}
+
+###
+DELETE http://localhost:4000/api/v1/auth/availabilities/2022-02-01
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzFkYWRlZjlhODUxYWZmNGEzMThiZiIsImlhdCI6MTcxODczNzYzMCwiZXhwIjoxNzI2NTEzNjMwfQ.p6-oxZF_qOuxExEo9xoyPjFM31YaWSEJo_yNLJj9AmI
+
+###
+GET http://localhost:4000/api/v1/auth/linked-users/home
+Authorization: Bearer {{agencyToken}}
+###
+
+GET https://fc7e-82-44-21-31.ngrok-free.app/api/v1/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzYwZGRlMTQ3NTg1MWRmMjA4NGIyNiIsImlhdCI6MTcxOTAxMjgzMCwiZXhwIjoxNzI2Nzg4ODMwfQ.4Fvx5Z3ZH_ViqAs2SIDxLCFsj9zobQA64T5DL5pDyH8
+
+
+###
+
+PATCH http://localhost:4000/api/v1/auth/unlink
+Content-Type: application/json
+Authorization: Bearer {{agencyToken}}
+
+{
+    "linkedUserId": "66760f1b532fc26625e492f6",
+    "linkedUserType": "home"
+}
+
+    
+###
+
+
+
+GET http://localhost:4000/api/v1/auth/search-users/home?companyName=
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzYwZGRlMTQ3NTg1MWRmMjA4NGIyNiIsImlhdCI6MTcxOTAxMjgzMCwiZXhwIjoxNzI2Nzg4ODMwfQ.4Fvx5Z3ZH_ViqAs2SIDxLCFsj9zobQA64T5DL5pDyH8

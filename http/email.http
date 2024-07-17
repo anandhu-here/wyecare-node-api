@@ -1,0 +1,16 @@
+@url = http://localhost:4000/api/v1
+@homeToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzYwZmJlNTMyZmMyNjYyNWU0OTMwNyIsImlhdCI6MTcxOTAxMzMxMCwiZXhwIjoxNzI2Nzg5MzEwfQ.028jxNHQAgsoqPvBMiOMD68O9Sy-GKJCOIseCD67OuY
+@agencyToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzYwZGRlMTQ3NTg1MWRmMjA4NGIyNiIsImlhdCI6MTcxOTAxMjgzMCwiZXhwIjoxNzI2Nzg4ODMwfQ.4Fvx5Z3ZH_ViqAs2SIDxLCFsj9zobQA64T5DL5pDyH8
+
+
+### SEND EMAIL
+
+POST http://localhost:4000/api/v1/email/send-email
+Content-Type: application/json
+Authorization: Bearer {{agencyToken}}
+
+{
+    "to": "anandhusathee@gmail.com",
+    "subject": "Test Email",
+    "text": "This is a test email"
+}

@@ -1,0 +1,14 @@
+
+@carerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODQ3YWUxYjkyZmQ5ZWFjNjRiZjdhOSIsImlhdCI6MTcxOTk1ODI0MSwiZXhwIjoxNzI3NzM0MjQxfQ.ol6t6JsRxcsKFcHq26006PPF7hs33fjBLykZ7hmbxv0
+
+
+### Get current timeline
+
+GET http://localhost:4000/api/v1/timeline/current-agency
+Authorization: Bearer {{carerToken}}
+
+
+### remove current
+
+DELETE http://localhost:4000/api/v1/timeline/remove-current-agency
+Authorization: Bearer {{carerToken}}

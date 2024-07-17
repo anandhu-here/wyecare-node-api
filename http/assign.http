@@ -1,0 +1,7 @@
+PUT http://localhost:4000/api/v1/shift/6664e203fc3d1bb9899b918a/assign
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjBmMGMxNjM3MTdhYjk2OWMyNDg3NyIsImlhdCI6MTcxNzYyOTEyMSwiZXhwIjoxNzI1NDA1MTIxfQ.h_u1lQbzOd1bRhqPO19xyXNQ-r-84i8n3sEM1SmKYC4
+
+{
+    "userIds":["6664e203fc3d1bb9899b918a"]
+}
