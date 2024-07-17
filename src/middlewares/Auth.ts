@@ -68,7 +68,7 @@ class AuthMiddleware {
       });
     }
 
-    const reqUser = await User.findById(decodedToken.userId);
+    const reqUser = await User.findById(decodedToken.userId).lean();
 
     if (!reqUser) {
       return next(new ApiError(Strings.USER_NOT_FOUND, StatusCodes.NOT_FOUND));
